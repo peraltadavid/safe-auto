@@ -1,0 +1,33 @@
+.file-input {
+  display: flex;
+
+  .file-input-text {
+    display: flex;
+    width: 500px;
+    height: 36px;
+
+    border: rgba(0, 0, 0, 0.25) solid 1px;
+    border-radius: 5px;
+
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 15pt;
+
+    cursor: pointer;
+
+    &.file-selected {
+      color: black;
+    }
+
+    &:hover {
+      border: rgba(0, 0, 0, 0.5) solid 1px;
+    }
+  }
+
+  .file-input-btn {
+    margin-left: 5px;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+}

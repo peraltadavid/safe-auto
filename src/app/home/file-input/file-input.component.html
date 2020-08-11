@@ -1,0 +1,28 @@
+<div class="file-input">
+  <label
+    for="file-upload"
+    class="file-input-text"
+    [ngClass]="{ 'file-selected': file }"
+  >
+    {{
+      file
+        ? file.name
+        : "Click to choose file to upload. '.txt' is only valid format"
+    }}
+  </label>
+  <input
+    id="file-upload"
+    type="file"
+    accept=".txt"
+    (change)="onFileInputChange($event.target.files.item(0))"
+  />
+
+  <button
+    mat-raised-button
+    class="file-input-btn"
+    color="primary"
+    [disabled]="!file"
+  >
+    Upload
+  </button>
+</div>
