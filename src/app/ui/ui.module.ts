@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './header/header.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule],
-  exports: [],
+  declarations: [HeaderComponent],
+  imports: [CommonModule, MatButtonModule],
+  exports: [HeaderComponent, MatButtonModule],
 })
 export class UiModule {}
