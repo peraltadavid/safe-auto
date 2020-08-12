@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackEndService } from 'src/app/back-end.service';
 
 @Component({
   selector: 'app-file-input',
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FileInputComponent implements OnInit {
   file: File;
-  constructor() {}
+  constructor(private BackEndService: BackEndService) {}
 
   ngOnInit(): void {}
 
   onFileInputChange(file: File) {
     this.file = file;
+  }
+
+  uploadFile() {
+    this.BackEndService.uploadAndCompileFile(this.file).subscribe((value) => {
+      console.log(value);
+    });
   }
 }
