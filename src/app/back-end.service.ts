@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from './../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -14,8 +15,10 @@ export class BackEndService {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json');
-    return this.http.post(`${environment.backEnd}/uploadAndCompile`, formData, {
-      headers,
-    });
+    return this.http
+      .post(`${environment.backEnd}/uploadAndCompile`, formData, {
+        headers,
+      })
+      .pipe(take(1));
   }
 }

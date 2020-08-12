@@ -1,3 +1,13 @@
 <div class="home">
-  <app-file-input></app-file-input>
+  <app-file-input
+    (fileCompileCompleteChange)="onFileCompileCompleteChange($event)"
+    (errorChange)="onErrorChange($event)"
+    (tripDTOsChange)="onTripDTOsChange($event)"
+  ></app-file-input>
+  <app-result-table
+    *ngIf="fileCompileComplete"
+    [fileCompileComplete]="fileCompileComplete"
+    [error]="error"
+    [tripDTOs]="tripDTOs"
+  ></app-result-table>
 </div>

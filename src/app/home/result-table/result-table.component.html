@@ -1,0 +1,6 @@
+<div *ngIf="!!error" class="error">{{ error }}</div>
+<div *ngIf="!error" class="results">
+  <div *ngFor="let trip of tripDTOs">
+    {{ getTripInfo(trip) }}
+  </div>
+</div>
